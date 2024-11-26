@@ -61,7 +61,7 @@ prompt() {
     local index=5
     
     if __git_prompt_git rev-parse --get-dir &> /dev/null; then
-        local git_prompt="$(git_prompt_info)"
+        local git_prompt="$(_omz_git_prompt_info)"
         local remote_status="$(git_remote_status)"
         if [[ -n $remote_status ]]; then
             git_prompt="$git_prompt $remote_status"
